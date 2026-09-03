@@ -20,7 +20,7 @@ assignees: ""
 
 **To reproduce**
 
-<!-- Real binaries, real terminals. Include daemon logs (check the daemon actually bound — a stale ostromd on :4180 has answered smokes before). -->
+<!-- Real binaries, real terminals. Include daemon logs (check the daemon actually bound; a stale ostromd on :4180 has answered smokes before). -->
 
 **Environment**
 

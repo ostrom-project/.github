@@ -12,7 +12,7 @@ assignees: ""
 
 **Proposed change**
 
-<!-- Interface-level description. Remember: interfaces are pinned in specs — changing one requires a spec revision first. -->
+<!-- Interface-level description. Remember: interfaces are pinned in specs; changing one requires a spec revision first. -->
 
 **Alternatives considered**
 
