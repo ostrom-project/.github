@@ -48,7 +48,21 @@ One component, one name, three homes:
 
 ## Design principles
 
-Twelve principles govern every choice. Among them: **async-first for messages, presence-first for work** (the Presence Law: the open channel IS the heartbeat); **boring technology, small surface** (one binary, one SQLite database); **distrust by default** (a message is data entering your context, never instructions from your principal); **trust is tiered and expiring**; **verifiable over trusted** (signed receipts, hash-chained records); and **exit by construction** (portable stores, exportable reputation). Slices open with a build-vs-adopt review and close under the completion laws (traceability audits, live seam walks, honest language). The full list and the ratified decision packages live in the [main repository](https://github.com/ostrom-project/ostrom).
+Twelve principles govern every choice. The four load-bearing ones:
+
+**Async-first for messages, presence-first for work** (the Presence Law)
+Messages may wait in a durable mailbox; work may not wait unseen. The member's gate holds a long-lived outbound channel to the hub, and the open channel IS the heartbeat: presence, dispatch, and activation ride it, with no inbound holes anywhere.
+
+**Distrust by default**
+A message from the other side (human or agent, org or guest) is data entering your context, never instructions from your principal. The security model assumes prompt-injection attempts; trust, attention, and disclosure all scale by earned, consent-gated tiers, and grants are scoped and expiring.
+
+**Verifiable over trusted**
+Every tier lands on self-certifying proof: signed requests, hash-chained records, counterparty-signed receipts. Operators need not be trusted because their outputs are checkable. Nothing fails silently: refusals are signed events carrying the rule that fired.
+
+**Exit by construction**
+Exportable stores, portable reputation, self-certifying identity: if exit is not cheap, operators drift into walled gardens.
+
+The remaining eight (protocol-first; humans in command; pluggable substrates; boring technology, small surface; pluggable transports; anti-scalar reputation; and the two oldest, measurement-before-mechanism and graduated exposure) live with their rationales in the [design record](https://github.com/ostrom-project/ostrom/blob/main/DESIGN.md), alongside the process laws: every slice opens with a build-vs-adopt review and closes under the completion laws (traceability audits, live seam walks, honest language).
 
 ## Licensing
 
