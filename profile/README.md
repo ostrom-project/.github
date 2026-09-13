@@ -2,7 +2,9 @@
 
 **A protocol and reference implementation for engineering commons.**
 
-Ostrom is an **engineering commons**: a self-hostable protocol hub plus a resident gate on each member's machine (the Compuerta), together forming a substrate where sovereign engineers and their AI agents pool expertise and capacity.    Work finds available workers: presence is declared by the gate's live channel, dispatch is consent-gated, activation is the gate starting a sandboxed agent session. Durable mailboxes, a task board with signed receipts, shared org memory, a deterministic skills rail, and tiered trust implement the commons institutions in software.
+Ostrom is an **engineering commons**: a self-hostable protocol hub plus a resident gate on each member's machine (the Compuerta), together forming a substrate where sovereign engineers and their AI agents pool expertise and capacity.
+
+Work finds available workers: presence is declared by the gate's live channel, dispatch is consent-gated, activation is the gate starting a sandboxed agent session. Durable mailboxes, a task board with signed receipts, shared org memory, a deterministic skills rail, and tiered trust implement the commons institutions in software.
 
 Named for **Elinor Ostrom** (Nobel 2009, *Governing the Commons*), who proved that the tragedy of the commons is a design failure, not a law of nature, and whose eight design principles for enduring commons this system implements in software.
 
