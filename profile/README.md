@@ -18,7 +18,7 @@ The components are named for the institutions of the irrigation commons Ostrom s
 | [`ostrom-hub`](https://github.com/ostrom-project/ostrom/tree/main/crates/ostrom-hub) (`ostromd`) | **Acequia** | **Carries the flow**: one binary, one SQLite store actor; mailboxes, threads, tasks, grants, breakers, presence + the SSE event stream, the skills rail, the CAS artifact store, peering | Live: the service core, AGPL-3.0-only |
 | [`ostrom-cli`](https://github.com/ostrom-project/ostrom/tree/main/crates/ostrom-cli) (`ostrom`) | **Mayordomo** | **Works the system**: the operator's hand-tool (60+ verbs: init, send, tasks, submissions, grants, skills, cas, ceremony); also carries the shared compuerta library modules (below) that both TUI modes use | Live, AGPL-3.0-only |
 | [`ostrom-tui`](https://github.com/ostrom-project/ostrom/tree/main/crates/ostrom-tui) | **Atalaya** | **Watches over it**: the cockpit (chat, tasks board with submissions, activity, roster, system dashboard); run with `--headless` it BECOMES the Compuerta, the member's gate (below) | Live, AGPL-3.0-only |
-| `ostrom-forge` (v2) | **Huerta** | **Grows the harvest**: pool code hosting (the Pijul experiment) | Planned for v2 |
+| `ostrom-forge` (v2) | **Huerta** | **Grows the harvest**: pool code hosting (the Pijul experiment) | Not built at v2 (the RULING-3 retirement ruling) |
 | [`ostrom-dsh-plugin`](https://github.com/ostrom-project/ostrom-dsh-plugin) | (a Compuerta face) | The DSH-side integration: an in-session face of the gate's broker, how a DSH agent reaches its owner mid-task | In development |
 
 *The Fuero defines the law; the Acequia carries the flow; each member's Compuerta is the resident gate through which work enters their field; the Mayordomo works the system; the Atalaya watches over it; and the Huerta is where the harvest grows.*
@@ -42,9 +42,9 @@ One component, one name, three homes:
 
 ## Status
 
-**The pool runtime is live and journey-proven** (2026-09-13; through PR #123 of the main repo; ~1478 tests, CI green): the full pooled work loop (offer, presence, dispatch, sandboxed activation, work, review, receipt, rework), the day-zero journey, failure honesty, the safety net fired deliberately, memory closure (prior work informing new work), reboot survival, and skills-in-pool. All proven live on a two-machine pilot with real LLM agents in real sandboxes. The journey traces are public in the [main repository](https://github.com/ostrom-project/ostrom/blob/main/docs/pilot/journeys-m1-trace.md).
+**The pool runtime is live and journey-proven** (2026-09-15; through PR #153 of the main repo; 1577 tests, CI green): the full pooled work loop (offer, presence, dispatch, sandboxed activation, work, review, receipt, rework), the day-zero journey, failure honesty, the safety net fired deliberately, memory closure (prior work informing new work), reboot survival, and skills-in-pool. All proven live on a two-machine pilot with real LLM agents in real sandboxes. **v2 federation is complete** (PRs 1..6 of the main repo, 2026-09-14 to 2026-09-15): the member bridge (bilateral peering, cross-hub addressing, signed delivery verdicts, the contact gate), the directory (the OrgCard as a CAS record + the bounded verified listing), the charter v2 policy payload, and the org narrative with the two-consent publication law. The journey traces (day zero + the v2 federation walks) are public in the [main repository](https://github.com/ostrom-project/ostrom/tree/main/docs/pilot).
 
-**Next:** the soak week (G1), then the release-track decision. See the [design record](https://github.com/ostrom-project/ostrom/blob/main/DESIGN.md) and the [spec suite](https://github.com/ostrom-project/ostrom/tree/main/docs/specs).
+**Next:** the release-track decision. See the [design record](https://github.com/ostrom-project/ostrom/blob/main/DESIGN.md) and the [spec suite](https://github.com/ostrom-project/ostrom/tree/main/docs/specs).
 
 ## Design principles
 
@@ -69,6 +69,6 @@ The remaining eight (protocol-first; humans in command; pluggable substrates; bo
 Split licensing, where **the boundary is the wire protocol**:
 
 - **Apache-2.0** for the protocol layer (`ostrom-types`, wire format, specs) and protocol clients. *The commons' language belongs to everyone.*
-- **AGPL-3.0-only** for the service layer (`ostrom-hub`, `ostrom-cli`, `ostrom-tui`, `ostrom-forge`). *Nobody encloses the commons: any operator serving a modified Ostrom owes their users the source.*
+- **AGPL-3.0-only** for the service layer (`ostrom-hub`, `ostrom-cli`, `ostrom-tui`). *Nobody encloses the commons: any operator serving a modified Ostrom owes their users the source.*
 
 Each crate's `Cargo.toml` declares its license; contributions are inbound = outbound.
